@@ -49,7 +49,7 @@ public class Files {
 
         for (String name : images.keySet()) {
 
-            if (name.toLowerCase().contains(substr)) {
+            if (name.toLowerCase().split("\\.(png|jpg|jpeg)")[0].contains(substr)) {
 
                 matchingImagesNames.add(name);
             }
