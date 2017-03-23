@@ -38,12 +38,6 @@ public class Files {
         return imageNames;
     }
 
-    public String[] getImageNames() {
-
-        Set<String> names = images.keySet();
-        return names.toArray(new String[names.size()]);
-    }
-
     public File getImageByName(String name) {
 
         return images.get(name);
