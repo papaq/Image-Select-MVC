@@ -13,7 +13,7 @@ public class ImagesView extends JFrame {
 
     private JTextField imageName = new JTextField(20);
     private JComboBox<String> comboBoxImageChoose = new JComboBox<>();
-    private JLabel imageLabel = new JLabel("kk");
+    private JLabel imageLabel = new JLabel();
 
     public ImagesView() {
 
@@ -86,10 +86,12 @@ public class ImagesView extends JFrame {
         }
 
         ImageIcon imageIcon = new ImageIcon(bi);
-        //imageLabel = new JLabel("", imageIcon, JLabel.CENTER);
-
-        imageLabel.setText("");
         imageLabel.setIcon(imageIcon);
+   }
+
+   public void removeImage() {
+
+       imageLabel.setIcon(null);
    }
 
     public void addTextFieldListener(DocumentListener listener) {
@@ -99,12 +101,17 @@ public class ImagesView extends JFrame {
 
     public void setComboBoxItems(String[] items) {
 
-        comboBoxImageChoose.removeAllItems();
+        clearComboBoxItems();
 
         for (String item : items) {
 
             comboBoxImageChoose.addItem(item);
         }
+    }
+
+    public void clearComboBoxItems() {
+
+        comboBoxImageChoose.removeAllItems();
     }
 
     public String getSelectedItem() {

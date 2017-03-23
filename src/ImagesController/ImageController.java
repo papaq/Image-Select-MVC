@@ -63,7 +63,16 @@ public class ImageController {
 
             String inputStr = theView.getImageNameText();
             String[] items = theModel.getMatchingImagesNames(inputStr);
-            theView.setComboBoxItems(items);
+
+            if (items.length != 0) {
+
+                theView.setComboBoxItems(items);
+            }
+            else {
+
+                theView.removeImage();
+                theView.clearComboBoxItems();
+            }
         }
     }
 }
